@@ -100,6 +100,11 @@
         /* Hero Section */
         .hero {
             animation: fadeIn 0.8s ease-out;
+            display: none;
+        }
+
+        .hero.active {
+            display: block;
         }
 
         @keyframes fadeIn {
@@ -262,23 +267,6 @@
                 margin-top: 20px;
             }
         }
-
-        /* Language Content */
-        [data-lang="nl"] {
-            display: none;
-        }
-
-        [data-lang="nl"].active {
-            display: block;
-        }
-
-        [data-lang="en"] {
-            display: block;
-        }
-
-        [data-lang="en"].hidden {
-            display: none;
-        }
     </style>
 </head>
 <body>
@@ -326,12 +314,13 @@
         const heroSections = document.querySelectorAll('.hero');
 
         languageButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const selectedLang = button.dataset.lang;
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const selectedLang = this.dataset.lang;
 
                 // Update active button
                 languageButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
+                this.classList.add('active');
 
                 // Update visible content
                 heroSections.forEach(section => {
@@ -347,10 +336,10 @@
         });
 
         // Load saved language preference
-        window.addEventListener('load', () => {
+        document.addEventListener('DOMContentLoaded', function() {
             const savedLang = localStorage.getItem('language') || 'en';
             const languageButton = document.querySelector(`.language-btn[data-lang="${savedLang}"]`);
-            if (languageButton) {
+            if (languageButton && savedLang !== 'en') {
                 languageButton.click();
             }
         });
