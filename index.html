@@ -73,8 +73,8 @@
         }
 
         .language-btn.active {
-            background-color: var(--primary-color);
-            color: var(--text-color);
+            background-color: var(--text-color);
+            color: var(--primary-color);
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
         }
 
@@ -113,8 +113,17 @@
             }
         }
 
+        .hero .subtitle-top {
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 1.2px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
         .hero h1 {
-            font-size: 48px;
+            font-size: 56px;
             font-weight: 700;
             letter-spacing: -0.5px;
             margin-bottom: 24px;
@@ -122,28 +131,20 @@
             color: var(--text-color);
         }
 
-        .hero-subtitle {
-            font-size: 24px;
-            font-weight: 400;
-            color: var(--text-light);
-            margin-bottom: 12px;
-            letter-spacing: -0.3px;
-        }
-
-        .hero p {
+        .hero .description {
             font-size: 18px;
             color: var(--text-light);
-            margin-bottom: 48px;
+            margin-bottom: 20px;
             line-height: 1.6;
             font-weight: 400;
         }
 
-        .hero .subtitle-accent {
-            display: block;
-            font-size: 20px;
-            color: var(--text-color);
-            margin-bottom: 8px;
-            font-weight: 600;
+        .hero .footer-text {
+            font-size: 15px;
+            color: var(--text-light);
+            margin-top: 48px;
+            line-height: 1.6;
+            font-weight: 400;
         }
 
         /* CTA Button */
@@ -151,7 +152,7 @@
             display: inline-block;
             background-color: var(--accent-color);
             color: var(--primary-color);
-            padding: 12px 28px;
+            padding: 12px 32px;
             border-radius: 10px;
             text-decoration: none;
             font-size: 16px;
@@ -161,6 +162,8 @@
             cursor: pointer;
             box-shadow: 0 2px 8px rgba(0, 113, 227, 0.2);
             letter-spacing: 0.5px;
+            margin-top: 28px;
+            margin-bottom: 20px;
         }
 
         .cta-button:hover {
@@ -171,6 +174,16 @@
 
         .cta-button:active {
             transform: translateY(0);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-light);
+            font-size: 14px;
+            border-top: 1px solid var(--border-color);
+            margin-top: 40px;
         }
 
         /* Responsive Design */
@@ -188,45 +201,65 @@
                 margin-top: 50px;
             }
 
-            .hero h1 {
-                font-size: 36px;
+            .hero .subtitle-top {
+                font-size: 12px;
                 margin-bottom: 16px;
             }
 
-            .hero-subtitle {
-                font-size: 20px;
-                margin-bottom: 8px;
+            .hero h1 {
+                font-size: 40px;
+                margin-bottom: 16px;
             }
 
-            .hero p {
+            .hero .description {
                 font-size: 16px;
-                margin-bottom: 32px;
+                margin-bottom: 16px;
             }
 
             .cta-button {
-                padding: 10px 24px;
+                padding: 10px 28px;
                 font-size: 15px;
+                margin-top: 20px;
+                margin-bottom: 16px;
+            }
+
+            .hero .footer-text {
+                font-size: 14px;
+                margin-top: 28px;
             }
         }
 
         @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 28px;
+            .hero .subtitle-top {
+                font-size: 11px;
                 margin-bottom: 12px;
             }
 
-            .hero-subtitle {
-                font-size: 16px;
+            .hero h1 {
+                font-size: 32px;
+                margin-bottom: 12px;
             }
 
-            .hero p {
+            .hero .description {
+                font-size: 15px;
+                margin-bottom: 12px;
+            }
+
+            .cta-button {
+                padding: 10px 24px;
                 font-size: 14px;
-                margin-bottom: 24px;
+                margin-top: 16px;
+                margin-bottom: 12px;
             }
 
             .language-btn {
                 padding: 6px 12px;
                 font-size: 12px;
+            }
+
+            .hero .footer-text {
+                font-size: 13px;
+                margin-top: 20px;
             }
         }
 
@@ -253,8 +286,8 @@
     <header>
         <div class="header-content">
             <div class="language-toggle">
-                <button class="language-btn active" data-lang="en">English</button>
-                <button class="language-btn" data-lang="nl">Nederlands</button>
+                <button class="language-btn active" data-lang="en">EN</button>
+                <button class="language-btn" data-lang="nl">NL</button>
             </div>
         </div>
     </header>
@@ -264,21 +297,28 @@
         <div class="container">
             <!-- English Content -->
             <div data-lang="en" class="hero active">
-                <h1>Premium Domain</h1>
-                <p class="subtitle-accent">Available for Acquisition</p>
-                <p>For acquisition of this domain, please contact us:</p>
-                <a href="mailto:maxlamberts@gmail.com" class="cta-button">Contact Now</a>
+                <p class="subtitle-top">THIS DOMAIN NAME IS AVAILABLE</p>
+                <h1>For acquisition of this domain, please contact us:</h1>
+                <p class="description">Every inquiry is handled confidentially and usually answered within one business day.</p>
+                <a href="mailto:maxlamberts@gmail.com" class="cta-button">Contact now</a>
+                <p class="footer-text">Serious inquiries receive a reply including the acquisition terms.</p>
             </div>
 
             <!-- Dutch Content -->
             <div data-lang="nl" class="hero">
-                <h1>Premium Domein</h1>
-                <p class="subtitle-accent">Beschikbaar voor Aankoop</p>
-                <p>Voor de aankoop van dit domein, neem alstublieft contact met ons op:</p>
-                <a href="mailto:maxlamberts@gmail.com" class="cta-button">Neem Contact Op</a>
+                <p class="subtitle-top">DEZE DOMEINNAAM IS BESCHIKBAAR</p>
+                <h1>Voor overname van dit domein kunt u contact met ons opnemen:</h1>
+                <p class="description">Wij behandelen elke aanvraag vertrouwelijk en reageren doorgaans binnen één werkdag.</p>
+                <a href="mailto:maxlamberts@gmail.com" class="cta-button">Neem nu contact op</a>
+                <p class="footer-text">Serieuze aanvragen ontvangen een reactie met de overnamevoorwaarden.</p>
             </div>
         </div>
     </main>
+
+    <!-- Footer -->
+    <footer>
+        © 2026
+    </footer>
 
     <script>
         // Language Switching Functionality
