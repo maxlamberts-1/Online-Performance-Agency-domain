@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Domain for Sale</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #ffffff;
+            --secondary-color: #f5f5f7;
+            --text-color: #1d1d1f;
+            --text-light: #86868b;
+            --accent-color: #0071e3;
+            --accent-hover: #0077ed;
+            --border-color: #d2d2d7;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header & Language Selector */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            padding: 16px 0;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .language-toggle {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--secondary-color);
+            border-radius: 20px;
+            padding: 4px;
+        }
+
+        .language-btn {
+            background: none;
+            border: none;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+            border-radius: 18px;
+        }
+
+        .language-btn.active {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+        }
+
+        .language-btn:hover {
+            color: var(--text-color);
+        }
+
+        /* Main Container */
+        main {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            margin-top: 60px;
+        }
+
+        .container {
+            max-width: 800px;
+            text-align: center;
+        }
+
+        /* Hero Section */
+        .hero {
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 24px;
+            line-height: 1.1;
+            color: var(--text-color);
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            font-weight: 400;
+            color: var(--text-light);
+            margin-bottom: 12px;
+            letter-spacing: -0.3px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-light);
+            margin-bottom: 48px;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .hero .subtitle-accent {
+            display: block;
+            font-size: 20px;
+            color: var(--text-color);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 12px 28px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 113, 227, 0.2);
+            letter-spacing: 0.5px;
+        }
+
+        .cta-button:hover {
+            background-color: var(--accent-hover);
+            box-shadow: 0 4px 12px rgba(0, 113, 227, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .cta-button:active {
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                padding: 12px 0;
+            }
+
+            .header-content {
+                padding: 0 16px;
+            }
+
+            main {
+                padding: 16px;
+                margin-top: 50px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+                margin-bottom: 16px;
+            }
+
+            .hero-subtitle {
+                font-size: 20px;
+                margin-bottom: 8px;
+            }
+
+            .hero p {
+                font-size: 16px;
+                margin-bottom: 32px;
+            }
+
+            .cta-button {
+                padding: 10px 24px;
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 28px;
+                margin-bottom: 12px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+            }
+
+            .hero p {
+                font-size: 14px;
+                margin-bottom: 24px;
+            }
+
+            .language-btn {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+        }
+
+        /* Language Content */
+        [data-lang="nl"] {
+            display: none;
+        }
+
+        [data-lang="nl"].active {
+            display: block;
+        }
+
+        [data-lang="en"] {
+            display: block;
+        }
+
+        [data-lang="en"].hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Language Toggle -->
+    <header>
+        <div class="header-content">
+            <div class="language-toggle">
+                <button class="language-btn active" data-lang="en">English</button>
+                <button class="language-btn" data-lang="nl">Nederlands</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- English Content -->
+            <div data-lang="en" class="hero active">
+                <h1>Premium Domain</h1>
+                <p class="subtitle-accent">Available for Acquisition</p>
+                <p>For acquisition of this domain, please contact us:</p>
+                <a href="mailto:info@example.com" class="cta-button">Contact Now</a>
+            </div>
+
+            <!-- Dutch Content -->
+            <div data-lang="nl" class="hero">
+                <h1>Premium Domein</h1>
+                <p class="subtitle-accent">Beschikbaar voor Aankoop</p>
+                <p>Voor de aankoop van dit domein, neem alstublieft contact met ons op:</p>
+                <a href="mailto:info@example.com" class="cta-button">Neem Contact Op</a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Language Switching Functionality
+        const languageButtons = document.querySelectorAll('.language-btn');
+        const heroSections = document.querySelectorAll('.hero');
+
+        languageButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const selectedLang = button.dataset.lang;
+
+                // Update active button
+                languageButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                // Update visible content
+                heroSections.forEach(section => {
+                    section.classList.remove('active');
+                    if (section.dataset.lang === selectedLang) {
+                        section.classList.add('active');
+                    }
+                });
+
+                // Store preference
+                localStorage.setItem('language', selectedLang);
+            });
+        });
+
+        // Load saved language preference
+        window.addEventListener('load', () => {
+            const savedLang = localStorage.getItem('language') || 'en';
+            const languageButton = document.querySelector(`.language-btn[data-lang="${savedLang}"]`);
+            if (languageButton) {
+                languageButton.click();
+            }
+        });
+    </script>
+</body>
+</html>
